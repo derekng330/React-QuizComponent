@@ -6,14 +6,14 @@ let quizData = require('./quiz_data.json')
 
 class Quiz extends Component {
     render() {
-        const isQuizEnd = this.state.quiz_position-1 == quizData.quiz_questions.length;
+        const isQuizEnd = true;
         return (
             <div>
                     {isQuizEnd && <QuizEnd />}
                     
-                    <QuizQuestion
+                    {!isQuizEnd && <QuizQuestion
                         quiz_question={quizData.quiz_questions[this.state.quiz_position-1]}
-                    />
+                    />}
             </div>
         )
         
